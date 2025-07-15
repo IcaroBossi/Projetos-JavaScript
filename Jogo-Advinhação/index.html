@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Advinhação</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="game-card">
+            <h1>🎯 Jogo de Advinhação</h1>
+            <p class="description">Estou pensando em um número entre <strong>1 e 100</strong>. Consegue adivinhar?</p>
+            
+            <div class="game-area">
+                <div class="input-section">
+                    <input type="number" id="guessInput" min="1" max="100" placeholder="Digite seu palpite">
+                    <button id="submitBtn" onclick="makeGuess()">Tentar</button>
+                </div>
+                
+                <div class="feedback-section">
+                    <div id="message" class="message">Faça seu primeiro palpite!</div>
+                    <div id="attempts" class="attempts">Tentativas: 0</div>
+                </div>
+                
+                <div class="history-section">
+                    <h3>Histórico de Palpites</h3>
+                    <div id="guessHistory" class="guess-history"></div>
+                </div>
+                
+                <button id="newGameBtn" onclick="startNewGame()" class="new-game-btn" style="display: none;">
+                    🎮 Novo Jogo
+                </button>
+            </div>
+        </div>
+        
+        <div class="stats-card">
+            <h3>📊 Estatísticas</h3>
+            <div class="stat">
+                <span class="stat-label">Jogos:</span>
+                <span id="gamesPlayed">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Vitórias:</span>
+                <span id="gamesWon">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Melhor Score:</span>
+                <span id="bestScore">-</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
